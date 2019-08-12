@@ -1,0 +1,40 @@
+<div class="principal">
+  <form #login = "ngForm" (ngSubmit) = "onClickSubmit(login.value)" >
+    <h1>Personas</h1>
+    <label for="instrucciones">Ingresa los siguientes datos:</label>
+    <br/>
+    <p>Nombre:</p>
+    <input type="text" name="nombre" placeholder="nombre" ngModel>
+    <p>Edad</p>
+    <input type="text" name="edad" placeholder="edad" ngModel>
+    <p>Sexo:</p>
+    <input type="text" name="sexo" placeholder="sexo" ngModel>
+    <p>Peso (en kilogramos)</p>
+    <input type="text" name="peso" placeholder="peso" ngModel>
+    <p>Altura (en metros):</p>
+    <input type="text" name="altura" placeholder="altura" ngModel>
+    <br><br>
+    <input type = "submit" value = "submit">
+  </form>
+</div>
+
+<div class="">
+  <ul>
+    <li *ngFor= "let p of personsList">
+      <table class="egt">
+        <tr>
+          <th>Información</th>
+        </tr>
+        <tr>
+          <td>{{p.imprimeMayorEdad()}}</td>
+        </tr>
+        <tr>
+          <td>{{p.imprimeIMC()}}</td>
+        </tr>
+        <tr>
+          <td>{{p.toString()}}</td>
+        </tr>
+      </table>
+    </li>
+  </ul>
+</div>
